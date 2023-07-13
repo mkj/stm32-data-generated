@@ -876,7 +876,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 1073765376,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {
@@ -982,7 +986,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "I3C2",
         address: 1140862976,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB3",
             enable: Some(PeripheralRccRegister {
@@ -1016,7 +1024,64 @@ const PERIPHERALS: &'static [Peripheral] = &[
                 af: Some(10),
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA2"),
+                request: Some(136),
+            },
+            PeripheralDmaChannel {
+                signal: "RX",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA1"),
+                request: Some(136),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA2"),
+                request: Some(137),
+            },
+            PeripheralDmaChannel {
+                signal: "TX",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA1"),
+                request: Some(137),
+            },
+            PeripheralDmaChannel {
+                signal: "TC",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA2"),
+                request: Some(138),
+            },
+            PeripheralDmaChannel {
+                signal: "TC",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA1"),
+                request: Some(138),
+            },
+            PeripheralDmaChannel {
+                signal: "RS",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA2"),
+                request: Some(139),
+            },
+            PeripheralDmaChannel {
+                signal: "RS",
+                channel: None,
+                dmamux: None,
+                dma: Some("GPDMA1"),
+                request: Some(139),
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",

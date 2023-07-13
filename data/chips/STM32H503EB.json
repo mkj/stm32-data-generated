@@ -860,6 +860,11 @@
                 {
                     "name": "I3C1",
                     "address": 1073765376,
+                    "registers": {
+                        "kind": "i3c",
+                        "version": "v1",
+                        "block": "I3C"
+                    },
                     "rcc": {
                         "clock": "APB1",
                         "enable": {
@@ -949,6 +954,11 @@
                 {
                     "name": "I3C2",
                     "address": 1140862976,
+                    "registers": {
+                        "kind": "i3c",
+                        "version": "v1",
+                        "block": "I3C"
+                    },
                     "rcc": {
                         "clock": "APB3",
                         "enable": {
@@ -990,6 +1000,48 @@
                         {
                             "signal": "EV",
                             "interrupt": "I3C2_EV"
+                        }
+                    ],
+                    "dma_channels": [
+                        {
+                            "signal": "RX",
+                            "dma": "GPDMA2",
+                            "request": 136
+                        },
+                        {
+                            "signal": "RX",
+                            "dma": "GPDMA1",
+                            "request": 136
+                        },
+                        {
+                            "signal": "TX",
+                            "dma": "GPDMA2",
+                            "request": 137
+                        },
+                        {
+                            "signal": "TX",
+                            "dma": "GPDMA1",
+                            "request": 137
+                        },
+                        {
+                            "signal": "TC",
+                            "dma": "GPDMA2",
+                            "request": 138
+                        },
+                        {
+                            "signal": "TC",
+                            "dma": "GPDMA1",
+                            "request": 138
+                        },
+                        {
+                            "signal": "RS",
+                            "dma": "GPDMA2",
+                            "request": 139
+                        },
+                        {
+                            "signal": "RS",
+                            "dma": "GPDMA1",
+                            "request": 139
                         }
                     ]
                 },

@@ -2739,7 +2739,11 @@ const PERIPHERALS: &'static [Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 1073765376,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "v1",
+            block: "I3C",
+        }),
         rcc: Some(PeripheralRcc {
             clock: "APB1",
             enable: Some(PeripheralRccRegister {

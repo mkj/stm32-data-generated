@@ -432,7 +432,7 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400 as 
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
-pub const I3C1: *mut () = 0x4000_5c00 as usize as _;
+pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_5c00 as usize as _) };
 pub const CRS: *mut () = 0x4000_6000 as usize as _;
 pub const DTS: *mut () = 0x4000_8c00 as usize as _;
 pub const LPTIM2: *mut () = 0x4000_9400 as usize as _;
@@ -459,7 +459,7 @@ pub const HASH: *mut () = 0x420c_0400 as usize as _;
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800 as usize as _) };
 pub const SBS: sbs::Sbs = unsafe { sbs::Sbs::from_ptr(0x4400_0400 as usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400 as usize as _) };
-pub const I3C2: *mut () = 0x4400_3000 as usize as _;
+pub const I3C2: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4400_3000 as usize as _) };
 pub const LPTIM1: *mut () = 0x4400_4400 as usize as _;
 pub const RTC: *mut () = 0x4400_7800 as usize as _;
 pub const TAMP: *mut () = 0x4400_7c00 as usize as _;
@@ -489,6 +489,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../../peripherals/pwr_h50.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h50.rs"]

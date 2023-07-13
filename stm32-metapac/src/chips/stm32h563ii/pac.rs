@@ -584,7 +584,7 @@ pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00 as u
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000 as usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400 as usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800 as usize as _) };
-pub const I3C1: *mut () = 0x4000_5c00 as usize as _;
+pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_5c00 as usize as _) };
 pub const CRS: *mut () = 0x4000_6000 as usize as _;
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400 as usize as _) };
 pub const USART10: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6800 as usize as _) };
@@ -687,6 +687,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
+#[path = "../../peripherals/i3c_v1.rs"]
+pub mod i3c;
 #[path = "../../peripherals/pwr_h5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_h5.rs"]
